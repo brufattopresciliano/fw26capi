@@ -1,11 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API de Notícias - Página Inicial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1> bEM VINDO A API NOTICIAS </h1>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">API de Notícias</a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Bem-vindo à API de Notícias</h3>
+            <p class="text-muted">Esta API permite buscar, inserir, apagar e atualizar notícias armazenadas em um banco de dados MongoDB Atlas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">GET /noticias</h5>
+            <p>Retorna todas as notícias cadastradas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">GET /noticias/id/:id</h5>
+            <p>Busca uma notícia específica usando o <code>id</code> como parâmetro.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">GET /noticias/tiponoticia/:tipo</h5>
+            <p>Retorna as notícias filtradas pelo tipo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">POST /postnoticias</h5>
+            <p>Insere uma nova notícia no banco. O corpo da requisição deve estar em formato JSON.</p>
+            <span class="badge bg-info">Requer JSON</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">PUT /putnoticias</h5>
+            <p>Atualiza dados de uma notícia existente. Os dados devem ser enviados via JSON.</p>
+            <span class="badge bg-info">Requer JSON</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">DELETE /delnoticas</h5>
+            <p>Remove uma notícia baseada nos dados enviados no corpo JSON.</p>
+            <span class="badge bg-danger">Requer JSON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm mt-4">
+      <div class="card-body">
+        <h4>Exemplos de uso (JSON)</h4>
+
+        <p><strong>POST - inserir notícia:</strong></p>
+        <pre class="bg-dark text-white p-3 rounded">
+{
+  "titulo": "Nova notícia",
+  "conteudo": "Texto da notícia...",
+  "tipo": "tecnologia"
+}
+        </pre>
+
+        <p><strong>PUT - atualizar notícia:</strong></p>
+        <pre class="bg-dark text-white p-3 rounded">
+{
+  "filtro": { "_id": "123abc" },
+  "atualizacao": { "$set": { "titulo": "Título atualizado" } }
+}
+        </pre>
+
+        <p><strong>DELETE - remover notícia:</strong></p>
+        <pre class="bg-dark text-white p-3 rounded">
+{
+  "_id": "123abc"
+}
+        </pre>
+      </div>
+    </div>
+
+    <footer class="text-center text-muted mt-4 mb-3">
+      <small>API de Notícias • Desenvolvida com MongoDB Atlas & Node.js</small>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
