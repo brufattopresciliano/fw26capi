@@ -7,8 +7,8 @@ app.set('view','./views')
  // Define your routes
 
 require("../db/dbconnect")(app)
-/* require("../rotas/home")(app)
-
+ require("../rotas/home")(app)
+/*
 require("../rotas/getnoticias")(app)
 require("../rotas/getidnoticias")(app)
 require("../rotas/gettiponoticias")(app)
