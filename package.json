@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "ejs": "^3.1.10",
-    "mongobd": "^0.0.1-security.0",
     "mongodb": "^6.21.0"
   }
 }
