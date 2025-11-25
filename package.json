@@ -1,10 +1,7 @@
 {
-  "name": "express",
   "dependencies": {
-    "express": "5.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "20.11.17",
-    "@types/express": "5.0.0"
+    "ejs": "^3.1.10",
+    "mongobd": "^0.0.1-security.0",
+    "mongodb": "^6.21.0"
   }
 }
