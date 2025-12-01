@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.set('view engine','ejs')
-app.set('view','./views')
+app.set('views','./views')
  // Define your routes
 
 require("../db/dbconnect")(app)
